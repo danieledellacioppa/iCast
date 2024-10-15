@@ -119,11 +119,9 @@ class ScreencastSender {
             return
         }
 
-        print("Sending frame of size: \(imageData.count) bytes") // Log dimensione frame
-
-        var dataSize = UInt32(imageData.count)
+        var dataSize = UInt32(imageData.count).bigEndian
         var dataWithSizePrefix = Data()
-        dataWithSizePrefix.append(Data(bytes: &dataSize, count: 4)) // Prepend size of data
+        dataWithSizePrefix.append(Data(bytes: &dataSize, count: MemoryLayout<UInt32>.size)) // Aggiungi la lunghezza in Big Endian
         dataWithSizePrefix.append(imageData)
         
         connection.send(content: dataWithSizePrefix, completion: .contentProcessed { error in
