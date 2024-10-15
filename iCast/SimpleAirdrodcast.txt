@@ -1,3 +1,76 @@
+Ecco il nome del file numero 1:
+--- ContentView.swift ---
+Contenuto del file numero 1:
+---
+import SwiftUI
+import ReplayKit
+
+struct ContentView: View {
+    @State private var isRecording = false
+    private let screenRecorder = RPScreenRecorder.shared()
+    
+    var body: some View {
+        VStack {
+            Text(isRecording ? "Stop Screencast" : "Start Screencast")
+                .font(.title)
+                .padding()
+                .background(isRecording ? Color.red : Color.green)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .onTapGesture {
+                    if isRecording {
+                        stopRecording()
+                    } else {
+                        startRecording()
+                    }
+                }
+        }
+    }
+    
+    func startRecording() {
+        screenRecorder.startCapture(handler: { sampleBuffer, bufferType, error in
+            guard error == nil else {
+                print("Error during capture: \(error!.localizedDescription)")
+                return
+            }
+            
+            if bufferType == .video {
+                // Send the sampleBuffer (video frame) to the Android device over network here
+                sendFrameToAndroid(sampleBuffer: sampleBuffer)
+            }
+            
+        }, completionHandler: { error in
+            if let error = error {
+                print("Failed to start capture: \(error.localizedDescription)")
+            } else {
+                isRecording = true
+            }
+        })
+    }
+    
+    func stopRecording() {
+        screenRecorder.stopCapture { error in
+            if let error = error {
+                print("Error stopping capture: \(error.localizedDescription)")
+            } else {
+                isRecording = false
+            }
+        }
+    }
+    
+    let screencastSender = ScreencastSender(ipAddress: "192.168.0.18", port: 7000) // Use the Android device's IP and chosen port
+
+    func sendFrameToAndroid(sampleBuffer: CMSampleBuffer) {
+        screencastSender.sendFrame(sampleBuffer: sampleBuffer)
+    }
+}
+
+--- Fine del contenuto del file numero 1 ---
+
+Ecco il nome del file numero 2:
+--- ScreencastSender.swift ---
+Contenuto del file numero 2:
+---
 import Network
 import AVFoundation
 import CoreImage
@@ -46,9 +119,11 @@ class ScreencastSender {
             return
         }
 
-        var dataSize = UInt32(imageData.count).bigEndian
+        print("Sending frame of size: \(imageData.count) bytes") // Log dimensione frame
+
+        var dataSize = UInt32(imageData.count)
         var dataWithSizePrefix = Data()
-        dataWithSizePrefix.append(Data(bytes: &dataSize, count: MemoryLayout<UInt32>.size)) // Aggiungi la lunghezza in Big Endian
+        dataWithSizePrefix.append(Data(bytes: &dataSize, count: 4)) // Prepend size of data
         dataWithSizePrefix.append(imageData)
         
         connection.send(content: dataWithSizePrefix, completion: .contentProcessed { error in
@@ -94,3 +169,30 @@ class ScreencastSender {
         connection?.cancel()
     }
 }
+
+--- Fine del contenuto del file numero 2 ---
+
+Ecco il nome del file numero 3:
+--- iCastApp.swift ---
+Contenuto del file numero 3:
+---
+//
+//  iCastApp.swift
+//  iCast
+//
+//  Created by Daniele Della Cioppa on 15/10/2024.
+//
+
+import SwiftUI
+
+@main
+struct iCastApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+--- Fine del contenuto del file numero 3 ---
+
