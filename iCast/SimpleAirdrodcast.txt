@@ -76,7 +76,6 @@ import AVFoundation
 import CoreImage
 import UniformTypeIdentifiers
 
-
 class ScreencastSender {
     private var connection: NWConnection?
     private let ipAddress: String
@@ -90,16 +89,24 @@ class ScreencastSender {
 
     private func setupConnection() {
         let host = NWEndpoint.Host(ipAddress)
-        let port = NWEndpoint.Port(integerLiteral: port)
+        guard let nwPort = NWEndpoint.Port(rawValue: port) else {
+            print("Porta non valida")
+            return
+        }
         
-        connection = NWConnection(host: host, port: port, using: .tcp)
+        connection = NWConnection(host: host, port: nwPort, using: .tcp)
         
-        connection?.stateUpdateHandler = { state in
+        connection?.stateUpdateHandler = { [weak self] state in
             switch state {
             case .ready:
                 print("Connected to Android device")
             case .failed(let error):
                 print("Connection failed: \(error.localizedDescription)")
+                self?.connection?.cancel()
+            case .waiting(let error):
+                print("Connection waiting: \(error.localizedDescription)")
+            case .cancelled:
+                print("Connection cancelled")
             default:
                 break
             }
@@ -121,12 +128,15 @@ class ScreencastSender {
 
         var dataSize = UInt32(imageData.count).bigEndian
         var dataWithSizePrefix = Data()
-        dataWithSizePrefix.append(Data(bytes: &dataSize, count: MemoryLayout<UInt32>.size)) // Aggiungi la lunghezza in Big Endian
+        dataWithSizePrefix.append(Data(bytes: &dataSize, count: MemoryLayout<UInt32>.size))
         dataWithSizePrefix.append(imageData)
         
-        connection.send(content: dataWithSizePrefix, completion: .contentProcessed { error in
+        connection.send(content: dataWithSizePrefix, completion: .contentProcessed { [weak self] error in
             if let error = error {
                 print("Failed to send data: \(error.localizedDescription)")
+                // Se necessario, gestisci la riconnessione
+                self?.connection?.cancel()
+                self?.setupConnection()
             } else {
                 print("Frame sent successfully")
             }

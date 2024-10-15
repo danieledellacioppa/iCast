@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6478C99D2CBEF8E500D726CD /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6478C99C2CBEF8E500D726CD /* ReplayKit.framework */; };
+		6478C9A72CBEF8E500D726CD /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6478C99C2CBEF8E500D726CD /* ReplayKit.framework */; };
+		6478C9A92CBEF8E500D726CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6478C9A82CBEF8E500D726CD /* UIKit.framework */; };
+		6478C9B02CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6478C9A62CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6478C9B32CBEF8E500D726CD /* ScreenBroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6478C99A2CBEF8E500D726CD /* ScreenBroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		64560F6E2CBEBD9C007C616E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,17 +29,77 @@
 			remoteGlobalIDString = 64560F5C2CBEBD99007C616E;
 			remoteInfo = iCast;
 		};
+		6478C9AE2CBEF8E500D726CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64560F552CBEBD99007C616E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6478C9A52CBEF8E500D726CD;
+			remoteInfo = ScreenBroadcastExtensionSetupUI;
+		};
+		6478C9B12CBEF8E500D726CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64560F552CBEBD99007C616E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6478C9992CBEF8E500D726CD;
+			remoteInfo = ScreenBroadcastExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6478C9BC2CBEF8E500D726CD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6478C9B32CBEF8E500D726CD /* ScreenBroadcastExtension.appex in Embed Foundation Extensions */,
+				6478C9B02CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		64560F5D2CBEBD9A007C616E /* iCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64560F6D2CBEBD9C007C616E /* iCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64560F772CBEBD9C007C616E /* iCastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCastUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6478C99A2CBEF8E500D726CD /* ScreenBroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenBroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6478C99C2CBEF8E500D726CD /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		6478C9A62CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenBroadcastExtensionSetupUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6478C9A82CBEF8E500D726CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6478C9B42CBEF8E500D726CD /* Exceptions for "ScreenBroadcastExtension" folder in "ScreenBroadcastExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6478C9992CBEF8E500D726CD /* ScreenBroadcastExtension */;
+		};
+		6478C9B82CBEF8E500D726CD /* Exceptions for "ScreenBroadcastExtensionSetupUI" folder in "ScreenBroadcastExtensionSetupUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6478C9A52CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */;
+		};
+		6478C9BE2CBF02CA00D726CD /* Exceptions for "iCast" folder in "iCast" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 64560F5C2CBEBD99007C616E /* iCast */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		64560F5F2CBEBD9A007C616E /* iCast */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6478C9BE2CBF02CA00D726CD /* Exceptions for "iCast" folder in "iCast" target */,
+			);
 			path = iCast;
 			sourceTree = "<group>";
 		};
@@ -43,6 +111,22 @@
 		64560F7A2CBEBD9C007C616E /* iCastUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = iCastUITests;
+			sourceTree = "<group>";
+		};
+		6478C99E2CBEF8E500D726CD /* ScreenBroadcastExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6478C9B42CBEF8E500D726CD /* Exceptions for "ScreenBroadcastExtension" folder in "ScreenBroadcastExtension" target */,
+			);
+			path = ScreenBroadcastExtension;
+			sourceTree = "<group>";
+		};
+		6478C9AA2CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6478C9B82CBEF8E500D726CD /* Exceptions for "ScreenBroadcastExtensionSetupUI" folder in "ScreenBroadcastExtensionSetupUI" target */,
+			);
+			path = ScreenBroadcastExtensionSetupUI;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +153,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6478C9972CBEF8E500D726CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6478C99D2CBEF8E500D726CD /* ReplayKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6478C9A32CBEF8E500D726CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6478C9A72CBEF8E500D726CD /* ReplayKit.framework in Frameworks */,
+				6478C9A92CBEF8E500D726CD /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +179,9 @@
 				64560F5F2CBEBD9A007C616E /* iCast */,
 				64560F702CBEBD9C007C616E /* iCastTests */,
 				64560F7A2CBEBD9C007C616E /* iCastUITests */,
+				6478C99E2CBEF8E500D726CD /* ScreenBroadcastExtension */,
+				6478C9AA2CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */,
+				6478C99B2CBEF8E500D726CD /* Frameworks */,
 				64560F5E2CBEBD9A007C616E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +192,19 @@
 				64560F5D2CBEBD9A007C616E /* iCast.app */,
 				64560F6D2CBEBD9C007C616E /* iCastTests.xctest */,
 				64560F772CBEBD9C007C616E /* iCastUITests.xctest */,
+				6478C99A2CBEF8E500D726CD /* ScreenBroadcastExtension.appex */,
+				6478C9A62CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6478C99B2CBEF8E500D726CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6478C99C2CBEF8E500D726CD /* ReplayKit.framework */,
+				6478C9A82CBEF8E500D726CD /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +217,13 @@
 				64560F592CBEBD99007C616E /* Sources */,
 				64560F5A2CBEBD99007C616E /* Frameworks */,
 				64560F5B2CBEBD99007C616E /* Resources */,
+				6478C9BC2CBEF8E500D726CD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6478C9AF2CBEF8E500D726CD /* PBXTargetDependency */,
+				6478C9B22CBEF8E500D726CD /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				64560F5F2CBEBD9A007C616E /* iCast */,
@@ -163,6 +281,50 @@
 			productReference = 64560F772CBEBD9C007C616E /* iCastUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		6478C9992CBEF8E500D726CD /* ScreenBroadcastExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6478C9B52CBEF8E500D726CD /* Build configuration list for PBXNativeTarget "ScreenBroadcastExtension" */;
+			buildPhases = (
+				6478C9962CBEF8E500D726CD /* Sources */,
+				6478C9972CBEF8E500D726CD /* Frameworks */,
+				6478C9982CBEF8E500D726CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6478C99E2CBEF8E500D726CD /* ScreenBroadcastExtension */,
+			);
+			name = ScreenBroadcastExtension;
+			packageProductDependencies = (
+			);
+			productName = ScreenBroadcastExtension;
+			productReference = 6478C99A2CBEF8E500D726CD /* ScreenBroadcastExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6478C9A52CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6478C9B92CBEF8E500D726CD /* Build configuration list for PBXNativeTarget "ScreenBroadcastExtensionSetupUI" */;
+			buildPhases = (
+				6478C9A22CBEF8E500D726CD /* Sources */,
+				6478C9A32CBEF8E500D726CD /* Frameworks */,
+				6478C9A42CBEF8E500D726CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6478C9AA2CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */,
+			);
+			name = ScreenBroadcastExtensionSetupUI;
+			packageProductDependencies = (
+			);
+			productName = ScreenBroadcastExtensionSetupUI;
+			productReference = 6478C9A62CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +346,12 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 64560F5C2CBEBD99007C616E;
 					};
+					6478C9992CBEF8E500D726CD = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					6478C9A52CBEF8E500D726CD = {
+						CreatedOnToolsVersion = 16.0;
+					};
 				};
 			};
 			buildConfigurationList = 64560F582CBEBD99007C616E /* Build configuration list for PBXProject "iCast" */;
@@ -203,6 +371,8 @@
 				64560F5C2CBEBD99007C616E /* iCast */,
 				64560F6C2CBEBD9C007C616E /* iCastTests */,
 				64560F762CBEBD9C007C616E /* iCastUITests */,
+				6478C9992CBEF8E500D726CD /* ScreenBroadcastExtension */,
+				6478C9A52CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +393,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		64560F752CBEBD9C007C616E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6478C9982CBEF8E500D726CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6478C9A42CBEF8E500D726CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +437,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6478C9962CBEF8E500D726CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6478C9A22CBEF8E500D726CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +463,16 @@
 			isa = PBXTargetDependency;
 			target = 64560F5C2CBEBD99007C616E /* iCast */;
 			targetProxy = 64560F782CBEBD9C007C616E /* PBXContainerItemProxy */;
+		};
+		6478C9AF2CBEF8E500D726CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6478C9A52CBEF8E500D726CD /* ScreenBroadcastExtensionSetupUI */;
+			targetProxy = 6478C9AE2CBEF8E500D726CD /* PBXContainerItemProxy */;
+		};
+		6478C9B22CBEF8E500D726CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6478C9992CBEF8E500D726CD /* ScreenBroadcastExtension */;
+			targetProxy = 6478C9B12CBEF8E500D726CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,6 +607,8 @@
 				DEVELOPMENT_TEAM = 2K347QZL7B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iCast/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Questa app richiede l’accesso alla rete locale per eseguire lo screencast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,6 +639,8 @@
 				DEVELOPMENT_TEAM = 2K347QZL7B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iCast/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Questa app richiede l’accesso alla rete locale per eseguire lo screencast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -516,6 +728,106 @@
 			};
 			name = Release;
 		};
+		6478C9B62CBEF8E500D726CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K347QZL7B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScreenBroadcastExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScreenBroadcastExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhter.iCast.ScreenBroadcastExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6478C9B72CBEF8E500D726CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K347QZL7B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScreenBroadcastExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScreenBroadcastExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhter.iCast.ScreenBroadcastExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6478C9BA2CBEF8E500D726CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K347QZL7B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScreenBroadcastExtensionSetupUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScreenBroadcastExtensionSetupUI;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhter.iCast.ScreenBroadcastExtensionSetupUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6478C9BB2CBEF8E500D726CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K347QZL7B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScreenBroadcastExtensionSetupUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScreenBroadcastExtensionSetupUI;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhter.iCast.ScreenBroadcastExtensionSetupUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,6 +863,24 @@
 			buildConfigurations = (
 				64560F882CBEBD9C007C616E /* Debug */,
 				64560F892CBEBD9C007C616E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6478C9B52CBEF8E500D726CD /* Build configuration list for PBXNativeTarget "ScreenBroadcastExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6478C9B62CBEF8E500D726CD /* Debug */,
+				6478C9B72CBEF8E500D726CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6478C9B92CBEF8E500D726CD /* Build configuration list for PBXNativeTarget "ScreenBroadcastExtensionSetupUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6478C9BA2CBEF8E500D726CD /* Debug */,
+				6478C9BB2CBEF8E500D726CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

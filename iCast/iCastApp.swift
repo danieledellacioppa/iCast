@@ -1,9 +1,4 @@
-//
-//  iCastApp.swift
-//  iCast
-//
-//  Created by Daniele Della Cioppa on 15/10/2024.
-//
+// ScreenCasterApp.swift
 
 import SwiftUI
 
